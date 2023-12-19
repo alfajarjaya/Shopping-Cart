@@ -2,17 +2,17 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('foodContent', () => ({
 
         items: [
-            { id: 1, name: 'Burger ', img: 'buger.jpg', price: 10000},
-            { id: 2, name: 'Kue ', img: 'cake.jpg', price: 15000},
-            { id: 3, name: 'Sosis ', img: 'sosis.jpg', price: 10000},
+            { id: 1, name: 'Burger ', img: 'buger.jpg', price: 10000, deskripsi: 'wenakkk'},
+            { id: 2, name: 'Kue ', img: 'cake.jpg', price: 15000, deskripsi: 'jossss'},
+            { id: 3, name: 'Sosis ', img: 'sosis.jpg', price: 10000, deskripsi: 'mahokkk'},
         ],
     }));
 
     Alpine.data('drinkContent', () => ({
         items: [
-            { id: 1, name: 'Kopi Macchiato ', img: 'menu1.jpg', price: 5000},
-            { id: 2, name: 'Kopi Hitam ', img: 'menu2.jpg', price: 5000},
-            { id: 3, name: 'Kopi Kapal Api ', img: 'kapalapi.webp', price: 5000},
+            { id: 1, name: 'Kopi Macchiato ', img: 'menu1.jpg', price: 5000, deskripsi: 'sueger'},
+            { id: 2, name: 'Kopi Hitam ', img: 'menu2.jpg', price: 5000, deskripsi: 'dinomu leee'},
+            { id: 3, name: 'Kopi Kapal Api ', img: 'kapalapi.webp', price: 5000, deskripsi: 'manut o aku'},
         ],
     }));
 

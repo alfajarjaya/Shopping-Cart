@@ -39,7 +39,7 @@
                     <img :src="`img/${item.img}`" :alt="item.name">
                     <footer>
                         <h1 x-text="item.name"></h1>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p x-text="item.deskripsi"></p>
                         <h4 x-text="rupiah(item.price)"></h4>
                         <button class="button" @click="$store.cart.add(item)">Tambah ke Keranjang</button>
                     </footer>
@@ -57,7 +57,7 @@
                     <img :src="`img/${item.img}`" :alt="item.name">
                     <footer>
                         <h1 x-text="item.name"></h1>
-                        <p>Macchiato adalah espresso yang diberi buih susu sebanyak satu atau dua sendok makan saja.</p>
+                        <p x-text="item.deskripsi"></p>
                         <h4 x-text="rupiah(item.price)"></h4>
                         <button class="button" @click="$store.cart.add(item)">Tambah ke Keranjang</button>
                     </footer>
