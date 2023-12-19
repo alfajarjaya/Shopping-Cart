@@ -50,26 +50,19 @@
 
         <!-- Content Drink Start -->
 
-        <div id="drinkContent" class="menu-content animate__animated animate__fadeInUp">
+        <div id="drinkContent" class="menu-content animate__animated animate__fadeInUp" x-data="drinkContent">
             <div class="menu-card" > 
-                <div class="card-item" data-aos="fade-down">
-                    <img src="./img/menu1.jpg" alt="menu1">
+                <template x-for="(item, index) in items" x-key="index">
+                <div class="card-item" data-aos="fade-down" data-aos-duration="1000">
+                    <img :src="`img/${item.img}`" :alt="item.name">
                     <footer>
-                        <h1>Kopi Macchiato.</h1>
+                        <h1 x-text="item.name"></h1>
                         <p>Macchiato adalah espresso yang diberi buih susu sebanyak satu atau dua sendok makan saja.</p>
-                        <h4>$1.0</h4>
-                        <button class="button">Tambah ke Keranjang</button>
+                        <h4 x-text="rupiah(item.price)"></h4>
+                        <button class="button" @click="$store.cart.add(item)">Tambah ke Keranjang</button>
                     </footer>
                 </div>
-                <div class="card-item" data-aos="fade-down">
-                    <img src="./img/menu2.jpg" alt="menu1">
-                    <footer>
-                        <h1>Kopi Hitam.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, excepturi.</p>
-                        <h4>$0.6</h4>
-                        <button class="button">Tambah ke Keranjang</button>
-                    </footer>
-                </div>
+                </template>
             </div>
         </div>
         

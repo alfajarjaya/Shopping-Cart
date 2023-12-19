@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // mEnampilkan konten secara default
 
-    showFoodContent();
+    showDrinkContent();
 
     foodButton.addEventListener("click", function() {
         showFoodContent();
