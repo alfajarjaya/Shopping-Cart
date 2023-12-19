@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;700&family=Poppins:wght@100;300;700&display=swap");
+
+:root {
+    --font-heading: #b68834;
+    --font-body: #ff9900 ; 
+    --para-font: #928d8daa;
+    --black: #222222;
+    --bg: #fff;
+    --white: #6b6363;
+    --span: #c58d24;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins , sans-serif;
+}
+
+span {
+    color: var(--span);
+    border-bottom: 2px solid var(--font-body);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar start */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+}
+
+.nav-back a {
+    color: #fff;
+    text-decoration: none;
+}
+
+button {
+    background: var(--span);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:focus {
+    background: var(--bg);
+    color: var(--black);
+}
+
+#orderButton {
+    background: none;
+    align-items: center;
+    position: relative;
+}
+
+.notif-buy {
+    display: inline-block;
+    padding: 1px 3px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0;
+    right: -2px;
+}
+
+@media only screen and (max-width: 768px ) {
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--white);
+        padding: 10px 0px;
+        width: 100%;
+    }
+    
+    .navbar .nav-back a,button {
+        margin: 0px 10px;
+    }
+}
+
+@media only screen and (min-width:769px ) {
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        background: var(--white);
+        padding: 10px;
+    }
+}
+
+/* Navbar Finish */
+
+/* Food Content */
+
+.content .menu-content {
+    margin-bottom: 200px;
+}
+
+.content .menu-content .menu-card .card-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.content .menu-content .menu-card .card-item h1{
+    font-size: 20px;
+    margin: 15px 30px;
+    color: var(--font-body);
+    border-bottom: 3px solid var(--para-font);
+}
+
+.content .menu-content .menu-card .card-item p{
+    margin: 20px;
+}
+
+.content .menu-content .menu-card .card-item h4{
+    margin: 20px;
+    font-weight: 800;
+}
+
+.content .menu-content .menu-card .card-item:hover {
+    transform: translateY(2rem);
+    transition-duration: 1.2s;
+    color: #ff0000;
+}
+
+.content .menu-content .menu-card .card-item .button {
+    border: none;
+    padding: 10px 20px;
+    margin: 15px auto;
+    background: var(--white);
+    color: var(--bg);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.content .menu-content .menu-card .card-item .button:hover {
+    background: var(--para-font) ;
+    color: var(--black);
+    transform: scale(1.1);
+    transition: all ease-out;
+    transition-duration: 1.1s;
+    box-shadow: 0px 0px 20px #ff0000;                    ;
+}
+
+@media only screen and (max-width: 768px ) {
+    .content .menu-content .menu-card {
+        text-align: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+    }
+
+    .content .menu-content .menu-card .card-item {
+        top: 16%;
+        text-align: center;
+        margin: 35px 20px;
+        border: 1px solid var(--black);
+        box-shadow: 10px 10px 10px var(--black);
+        border-radius: 30px;
+    }
+
+    .content .menu-card .card-item img {
+        width: 100%;
+        padding: 10px;
+        border-radius: 30px
+    }
+}
+
+@media only screen and (min-width: 769px ) {
+
+    .menu-content .menu-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 5px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .menu-content .menu-card .card-item{
+        top: 16%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 30px 15px;
+        width: 85%;
+        border: 1px solid var(--black);
+        box-sizing: border-box;
+        overflow: hidden;
+        box-shadow: -2px 5px 10px var(--black);
+    }
+    
+    .menu-content .menu-card .card-item img{
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 20px;
+    }
+}
+
+/* Order Start */
+
+.order{
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    
+}
+
+.order .order-content .order-header h1{
+    text-align: center;
+    margin: 10px 0px;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.order .order-content .order-header h6{
+    text-align: center;
+    margin: 10px 0px 50px 0px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.order .order_main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.order .order_main form .input p{
+    line-height: 25px;
+}
+
+.order .order_main form .input{
+    margin: 5px;
+}
+
+.order .order_main form .input input:focus{
+    border: 2px solid #fac031;
+}
+
+.order .order_main form .order_btn {
+    transition: all;
+    transition-duration: 1.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.order .order_main form .order_btn:active {
+    background: linear-gradient(to top,var(--white),var(--para-font));
+    transform: scale(1.3);
+    transition: all;
+    transition-duration: 1.2s;
+}
+
+@media only screen and (max-width:768px ) {
+
+    .order {
+        background-image: url(./img/coffeIMG.png);
+        width: 100%;
+        height: 100%;
+    }
+
+    .order .order-content .order-menu {
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        border-bottom: 2px dashed var(--black);
+        border-width: 100%;     
+    }
+
+    .order .order-content .order-menu .order-img, .order-description {
+        display: block;
+        /* flex-wrap: wrap; */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .order .order-content .order-menu .order-img {
+        margin-left: -80px;
+    }
+    
+    .order .order-content .order-menu .order-img img {  
+        width: 70px;
+        border-radius: 30%;
+    }
+
+    .order .order-content .order-menu .order-description {
+        text-align: center;
+        justify-content: center;
+        margin-left: 5px;
+    }
+
+    .order .order-content .order-menu .order-description h1 {
+        font-size: 16px;
+    }
+
+    .order .order-content .order-menu .order-description h4 {
+        font-size: 13px;
+    }
+    
+    .order .order-content .order-menu .order-description #add, #remove {
+        display: inline-block;
+        padding: 2px 5px;
+        cursor: pointer;
+        background: var(--white);
+        /* border: none; */
+        font-weight: bold;
+        color: var(--bg);
+    }
+
+    .order .order-content .order-menu .order-description span {
+        color: black;
+        border-bottom: none;
+    }
+
+    .order .order_main {
+        display: block-start;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .order .order_main form .order_btn {
+        padding: 10px 20px;
+        background: #fac031;
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+    }
+    
+    .order .order_main form .input input{
+        width: 280px;
+        height: 40px;
+        padding: 0 10px;
+        border: 2px solid #cccccc;
+        background: #eeeeee;
+        outline: none;
+        border-radius: 3px;
+        margin: 10px 0px ;
+    }
+    .order .order_main form .input textarea {
+        width: 280px;
+        height: 100px;
+        padding: 0 10px;
+        border: 2px solid #cccccc;
+        background: #eeeeee;
+        outline: none;
+        border-radius: 3px;
+        margin: 10px 0px ;
+    }
+}
+
+@media only screen and (min-width:769px ) {
+
+    .order {
+        background-image: url(./img/coffe-orderIMG.png);
+        width: 100%;
+        height: 100%;
+        display: block;
+
+    }
+
+    .order .order-content .order-menu {
+        /* display: flex; */
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 2px dashed var(--black);
+        border-width: 100%;  
+    }
+
+    .order .order-content .order-menu .order-img, .order-description {
+        display: flex;
+        align-items: center;
+        margin: 20px 0px;
+    }
+
+    .order .order-content .order-menu .order-img img {
+        border-radius: 30px;
+        width: 200px;
+    }
+
+    .order .order-content .order-menu .order-description {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+    }
+
+    .order .order-content .order-menu .order-description #add, #remove {
+        display: inline-block;
+        padding: 2px 5px;
+        cursor: pointer;
+        background: var(--white);
+        border: none;
+        font-weight: bold;
+        color: var(--bg);
+    }
+
+    .order .order-content .order-menu .order-description span {
+        color: black;
+        border-bottom: none;
+    }
+
+    .order .order_main form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        justify-content: space-around;
+    }
+
+    .order .order_main form .order_btn{
+        padding: 10px 50px;
+        background: #fac031;
+        color: white;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-top: 30px;
+        text-decoration: none;
+    }
+
+    .order .order_main form .input input{
+        width: 400px;
+        height: 35px;
+        padding: 0 30px;
+        border: 2px solid #cccccc;
+        background: #eeeeee;
+        outline: none;
+        border-radius: 3px;
+    }
+
+    .order .order_main form .input textarea {
+        width: 400px;
+        height: 150px;
+        padding: 0 10px;
+        border: 2px solid #cccccc;
+        background: #eeeeee;
+        outline: none;
+        border-radius: 3px;
+        margin: 10px 0px ;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    .order .order-content .order-menu .order-description {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-left: 400px;
+    }
+}
+
+/* Order Finish */

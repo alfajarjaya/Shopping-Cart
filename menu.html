@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" type="text/css" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Link Animasi saat di scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Feather Icon -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Alphine JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <nav class="navbar" x-data>
+        <div class="nav-back">
+            <a href="/CafeKita/">
+                <i data-feather="chevrons-left"></i>
+            </a>
+        </div>
+        <button id="drinkButton" onclick="showDrinkContent()">Minuman</button>
+        <button id="foodButton" onclick="showFoodContent()">Makanan</button>
+        <button id="orderButton" onclick="showOrderContent()">
+            <i data-feather="shopping-cart"></i>
+            <span class="notif-buy" x-show="$store.cart.totalJumlah" x-text="$store.cart.totalJumlah"></span>
+        </button>
+    </nav>
+
+    <div class="content" id="content">
+
+        <!-- Content Food start -->
+
+        <div id="foodContent" class="menu-content foodContent animate__animated animate__fadeInUp" x-data="foodContent">
+            <div class="menu-card" >
+                <template x-for="(item, index) in items" x-key="index">
+                <div class="card-item" data-aos="fade-down" data-aos-duration="1000">
+                    <img :src="`img/${item.img}`" :alt="item.name">
+                    <footer>
+                        <h1 x-text="item.name"></h1>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <h4 x-text="rupiah(item.price)"></h4>
+                        <button class="button" @click="$store.cart.add(item)">Tambah ke Keranjang</button>
+                    </footer>
+                </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- Content Drink Start -->
+
+        <div id="drinkContent" class="menu-content animate__animated animate__fadeInUp">
+            <div class="menu-card" > 
+                <div class="card-item" data-aos="fade-down">
+                    <img src="./img/menu1.jpg" alt="menu1">
+                    <footer>
+                        <h1>Kopi Macchiato.</h1>
+                        <p>Macchiato adalah espresso yang diberi buih susu sebanyak satu atau dua sendok makan saja.</p>
+                        <h4>$1.0</h4>
+                        <button class="button">Tambah ke Keranjang</button>
+                    </footer>
+                </div>
+                <div class="card-item" data-aos="fade-down">
+                    <img src="./img/menu2.jpg" alt="menu1">
+                    <footer>
+                        <h1>Kopi Hitam.</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, excepturi.</p>
+                        <h4>$0.6</h4>
+                        <button class="button">Tambah ke Keranjang</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content drink Finsih -->
+
+        <!-- Order Start -->
+
+        <div id="orderContent" class="menu-content animate__animated animate__fadeInUp">
+
+            <section class="order" id="ordernow">
+            <div class="order-content">
+                <div class="order-header">
+                    <h1><i><span>Beli </span>Sekarang.</i></h1>
+                    <h6>Ini adalah halaman terakhir pembelian !</h6>
+                </div>
+
+                <div class="order-menu" x-data>
+                    <template x-for="(item, index) in $store.cart.items" x-key="index">
+                    <div class="order-img">
+                        <img :src="`img/${item.img}`" :alt="item.name">
+                        <div class="order-description">
+                            <h1 x-text="item.name"></h1>
+                            <h4 x-text="rupiah(item.price)">&times;</h4>
+                            <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
+                            <span x-text="item.totalJumlah"></span>
+                            <button id="add" @click="$store.cart.add(item)">&plus;</button>&equals;
+                            <span x-text="rupiah(item.total)"></span>
+                        </div>
+                    </div>
+                    </template>
+
+                    <h1 x-show="$store.cart.items.length" style="font-size: 20px; text-align:center; margin-top:50px;">Total : <span x-text="rupiah($store.cart.total)"></span></h1>
+
+                    <div class="order_main">
+                        <form id="myForm" x-show="$store.cart.items.length" @submit.prevent="sendToWhatsApp">
+                            <div class="input">
+                                <p>Nama</p>
+                                <input type="text" name="nama" id="nama" placeholder="nama anda" required>
+                            </div>
+            
+                            <div class="input">
+                                <p>Email</p>
+                                <input type="email" name="email" id="email" placeholder="email anda" required>
+                            </div>
+            
+                            <div class="input">
+                                <p>Nomor Hp</p>
+                                <input id="nomorHp" name="no telpon" placeholder="nomor hp" required minlength="10">
+                            </div>
+            
+                            <div class="input">
+                                <p>Alamat</p>
+                                <input id="alamat" name="alamat" placeholder="alamat lengkap anda" required>
+                            </div>
+    
+                            <div class="input">
+                                <p>Keterangan</p>
+                                <textarea id="keterangan" name="keterangan" placeholder="keterangan :" required></textarea>
+                            </div>
+
+                            <center style="text-align: center; justify-content:center; margin-top:20px;">
+                                <button type="submit" class="order_btn" onclick="sendToWhatsApp()">Kirim</button>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+
+        
+            </div>
+            </section>
+    
+        </div>
+        
+        <!-- Order Finish -->
+    </div>
+
+    <!-- script JS default -->
+
+    <script src="menu.js"></script>
+
+    <!-- Script Keranjang belanja -->
+    <script src="app.js"></script>
+
+    <!-- Script Animasi -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Feather Icon -->
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
