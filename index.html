@@ -95,8 +95,8 @@
                     </div>
                     </template>
 
-                    <div class="total" style="margin: 40px 0px; border:2px solid #000;">
-                        <h1 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h1>
+                    <div class="total" style="margin: 40px 0px; border:2px solid #000;"  x-show="$store.cart.items.length">
+                        <h1>Total : <span x-text="rupiah($store.cart.total)"></span></h1>
                     </div>
 
                     <div class="order_main">
@@ -123,7 +123,8 @@
     
                             <div class="input">
                                 <p>Keterangan</p>
-                                <textarea id="keterangan" name="keterangan" placeholder="keterangan :" required></textarea>
+                                <textarea id="keterangan" name="keterangan" placeholder="keterangan : 
+        *isi bila diperlukan"></textarea>
                             </div>
 
                             <center style="text-align: center; justify-content:center; margin-top:20px;">

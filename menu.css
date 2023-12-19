@@ -428,6 +428,8 @@ button:focus {
     .order .order-content .order-menu .total h1 {
         font-size: 50px;
         text-align: center;
+        padding: 20px;
+        margin: 0px 50px;
     }
 
     .order .order_main form{
