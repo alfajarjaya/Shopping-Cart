@@ -85,16 +85,19 @@
                         <img :src="`img/${item.img}`" :alt="item.name">
                         <div class="order-description">
                             <h1 x-text="item.name"></h1>
-                            <h4 x-text="rupiah(item.price)">&times;</h4>
+                            <h4 x-text="rupiah(item.price)" style="margin: 15px 0px;">&times;</h4>
                             <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
                             <span x-text="item.totalJumlah"></span>
                             <button id="add" @click="$store.cart.add(item)">&plus;</button>&equals;
                             <span x-text="rupiah(item.total)"></span>
+                            <hr style="border-bottom: 2px dashed #000; margin:15px 0px;width: 120%;">
                         </div>
                     </div>
                     </template>
 
-                    <h1 x-show="$store.cart.items.length" style="font-size: 20px; text-align:center; margin-top:50px;">Total : <span x-text="rupiah($store.cart.total)"></span></h1>
+                    <div class="total" style="margin: 40px 0px; border:2px solid #000;">
+                        <h1 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h1>
+                    </div>
 
                     <div class="order_main">
                         <form id="myForm" x-show="$store.cart.items.length" @submit.prevent="sendToWhatsApp">

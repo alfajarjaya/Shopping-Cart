@@ -132,8 +132,8 @@ button:focus {
 }
 
 .content .menu-content .menu-card .card-item:hover {
-    transform: translateY(2rem);
-    transition-duration: 1.2s;
+    transform: translateY(0.5rem);
+    /* transition-duration: 1.03s; */
     color: #ff0000;
 }
 
@@ -148,11 +148,11 @@ button:focus {
 }
 
 .content .menu-content .menu-card .card-item .button:hover {
-    background: var(--para-font) ;
-    color: var(--black);
-    transform: scale(1.1);
+    background: var(--font-heading) ;
+    color: var(--bg);
+    /* transform: scale(1); */
     transition: all ease-out;
-    transition-duration: 1.1s;
+    /* transition-duration: 1.01s; */
     box-shadow: 0px 0px 20px #ff0000;                    ;
 }
 
@@ -285,12 +285,12 @@ button:focus {
     }
 
     .order .order-content .order-menu .order-img, .order-description {
-        display: block;
+        /* display: flex; */
         /* flex-wrap: wrap; */
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin: 10px;
+        margin: 15px 0px;
     }
 
     .order .order-content .order-menu .order-img {
@@ -329,6 +329,12 @@ button:focus {
     .order .order-content .order-menu .order-description span {
         color: black;
         border-bottom: none;
+    }
+
+    .order .order-content .order-menu .total h1 {
+        font-size: 20px;
+        text-align: center;
+        padding: 20px;
     }
 
     .order .order_main {
@@ -389,7 +395,7 @@ button:focus {
     .order .order-content .order-menu .order-img, .order-description {
         display: flex;
         align-items: center;
-        margin: 20px 0px;
+        margin: 40px 0px;
     }
 
     .order .order-content .order-menu .order-img img {
@@ -417,6 +423,11 @@ button:focus {
     .order .order-content .order-menu .order-description span {
         color: black;
         border-bottom: none;
+    }
+
+    .order .order-content .order-menu .total h1 {
+        font-size: 50px;
+        text-align: center;
     }
 
     .order .order_main form{
