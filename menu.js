@@ -100,9 +100,12 @@ function sendToWhatsApp() {
         itemsInCart.forEach(function (item) {
             pesanWhatsApp += '%E2%80%A2%20' + item.name + '%20(%20' +
                              item.totalJumlah + '%20x%20' + rupiah(item.price) +
-                             '%20)%0A' +  '%0ATotal :%20' + rupiah(item.total);
-        });
+                             '%20)%0A';
+            // totalBelanja = rupiah(item.total);
 
+        });
+        
+        pesanWhatsApp += '%0ATotal : %20' + rupiah(Alpine.store('cart').total);
         // Tautan WhatsApp 
         var linkWhatsApp = 'https://wa.me/' + nomorWhatsApp +
                            '?text=Nama : %20' + encodeURIComponent(nama) +
