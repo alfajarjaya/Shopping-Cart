@@ -4,13 +4,15 @@ document.addEventListener('alpine:init', () => {
         items: [
             { id: 1, name: 'Burger ', img: 'buger.jpg', price: 10000},
             { id: 2, name: 'Kue ', img: 'cake.jpg', price: 15000},
+            { id: 3, name: 'Sosis ', img: 'sosis.jpg', price: 10000},
         ],
     }));
 
     Alpine.data('drinkContent', () => ({
         items: [
-            { id: 3, name: 'Kopi Macchiato ', img: 'menu1.jpg', price: 5000},
-            { id: 4, name: 'KopiHitam ', img: 'menu2.jpg', price: 5000},
+            { id: 1, name: 'Kopi Macchiato ', img: 'menu1.jpg', price: 5000},
+            { id: 2, name: 'Kopi Hitam ', img: 'menu2.jpg', price: 5000},
+            { id: 3, name: 'Kopi Kapal Api ', img: 'kapalapi.webp', price: 5000},
         ],
     }));
 

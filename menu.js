@@ -61,7 +61,7 @@ function sendToWhatsApp() {
         var alamat = document.getElementById('alamat').value;
         var keterangan = document.getElementById('keterangan').value;
 
-        if (!nama || !email || !nomorHp || !alamat || !keterangan) {
+        if (!nama || !email || !nomorHp || !alamat) {
             alert('Harap isi semua form sebelum mengirim pesan.');
             return;
         }
