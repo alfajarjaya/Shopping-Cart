@@ -95,7 +95,7 @@ function sendToWhatsApp() {
         var itemsInCart = Alpine.store('cart').items;
 
         // Membuat pesan WhatsApp dengan informasi dari keranjang belanja
-        var pesanWhatsApp = 'Pesan%20Anda : %0A';
+        var pesanWhatsApp = '%0A%0APesanan%20Anda : %0A';
 
         itemsInCart.forEach(function (item) {
             pesanWhatsApp += '%E2%80%A2%20' + item.name + '%20(%20' +
@@ -112,8 +112,7 @@ function sendToWhatsApp() {
                            '%0AEmail : %20' + encodeURIComponent(email) +
                            '%0ANomor%20HP : %20' + encodeURIComponent(nomorHp) +
                            '%0AAlamat : %20' + encodeURIComponent(alamat) +
-                           '%0AKeterangan : %20' + encodeURIComponent(keterangan) +
-                           '%0A%0AKeranjang%20Belanja : %0A' + pesanWhatsApp;
+                           '%0AKeterangan : %20' + encodeURIComponent(keterangan) + pesanWhatsApp;
         window.open(linkWhatsApp, '_blank');
     } catch (error) {
         
