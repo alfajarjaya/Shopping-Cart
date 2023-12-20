@@ -284,13 +284,19 @@ button:focus {
         border-width: 100%;     
     }
 
-    .order .order-content .order-menu .order-img, .order-description {
-        /* display: flex; */
+    .order .order-content .order-menu .order-img , .order-description h1 {
+        display: flex;
         /* flex-wrap: wrap; */
         align-items: center;
         justify-content: center;
         text-align: center;
         margin: 15px 0px;
+    }
+
+    .order .order-content .order-menu .order-img .order-description p {
+        border-bottom: 5px dashed var(--black);
+        margin: 20px 0px;
+        width: 100%;
     }
 
     .order .order-content .order-menu .order-img {
@@ -398,16 +404,27 @@ button:focus {
         margin: 40px 0px;
     }
 
+    .order .order-content .order-menu .order-img, .order-description h1 {
+        margin: 0px 40px;
+    }
+    .order .order-content .order-menu .order-img, .order-description h4, .button, span {
+        font-size: 20px;
+    }
+
     .order .order-content .order-menu .order-img img {
         border-radius: 30px;
         width: 200px;
+    }
+
+    .order .order-content .order-menu .order-img {
+        margin: 50px 0px;
     }
 
     .order .order-content .order-menu .order-description {
         text-align: center;
         justify-content: center;
         align-items: center;
-        margin-left: 100px;
+        margin-left: 50px;
     }
 
     .order .order-content .order-menu .order-description #add, #remove {
