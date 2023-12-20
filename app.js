@@ -69,7 +69,7 @@ document.addEventListener('alpine:init', () => {
             } else if (cardItem.totalJumlah === 1) {
                 this.items = this.items.filter((item) => item.id !== id);
                 this.totalJumlah--;
-                this.total -= cartItem.price;
+                this.total -= cardItem.price;
             }
         },
 
