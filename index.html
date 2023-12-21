@@ -41,7 +41,9 @@
                         <h1 x-text="item.name"></h1>
                         <p x-text="item.deskripsi"></p>
                         <h4 x-text="rupiah(item.price)"></h4>
-                        <button class="button" @click="$store.cart.add(item)">Tambah ke Keranjang</button>
+                        <button class="button" @click="$store.cart.add(item)">
+                            <i>Tambah ke Keranjang</i>
+                        </button>
                     </footer>
                 </div>
                 </template>
@@ -59,13 +61,15 @@
                         <h1 x-text="item.name"></h1>
                         <p x-text="item.deskripsi"></p>
                         <h4 x-text="rupiah(item.price)"></h4>
-                        <button class="button" @click="$store.cart.add(item)">Tambah ke Keranjang</button>
+                        <button class="button" @click="$store.cart.add(item)">
+                            <i>Tambah ke Keranjang</i>
+                        </button>
                     </footer>
                 </div>
                 </template>
             </div>
         </div>
-        
+
         <!-- Content drink Finsih -->
 
         <!-- Order Start -->
