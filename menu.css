@@ -123,11 +123,11 @@ button:focus {
 }
 
 .content .menu-content .menu-card .card-item p{
-    margin: 20px;
+    margin: 0px 5px;
 }
 
 .content .menu-content .menu-card .card-item h4{
-    margin: 20px;
+    margin: 5px 0px;
     font-weight: 800;
 }
 
@@ -161,23 +161,31 @@ button:focus {
         text-align: center;
         align-items: center;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 5px;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0px;
     }
 
     .content .menu-content .menu-card .card-item {
         top: 16%;
         text-align: center;
-        margin: 35px 20px;
+        margin: 35px 15px;
         border: 1px solid var(--black);
         box-shadow: 10px 10px 10px var(--black);
-        border-radius: 30px;
     }
 
     .content .menu-card .card-item img {
         width: 100%;
-        padding: 10px;
-        border-radius: 30px
+    }
+
+    .content .menu-content .menu-card .card-item footer h1,p,h4{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content .menu-content .menu-card .card-item .button {
+        width: 80%;
     }
 }
 
@@ -209,6 +217,10 @@ button:focus {
         box-sizing: border-box;
         margin: 0;
         padding: 20px;
+    }
+
+    .content .menu-content .menu-card .card-item .button {
+        width: 80%;
     }
 }
 

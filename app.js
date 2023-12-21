@@ -5,6 +5,7 @@ document.addEventListener('alpine:init', () => {
             { id: 'Burger', name: 'Burger ', img: 'buger.jpg', price: 10000, deskripsi: 'wenakkk'},
             { id: 'kue', name: 'Kue ', img: 'cake.jpg', price: 15000, deskripsi: 'jossss'},
             { id: 'sosis', name: 'Sosis ', img: 'sosis.jpg', price: 10000, deskripsi: 'mahokkk'},
+            { id: 'iga bakar', name: 'Iga Bakar', img: 'iga.jpg', price: 50000, deskripsi: 'wenak maknyos'},
         ],
     }));
 
@@ -13,6 +14,7 @@ document.addEventListener('alpine:init', () => {
             { id: 'Kopi Macchiato', name: 'Kopi Macchiato ', img: 'menu1.jpg', price: 5000, deskripsi: 'sueger'},
             { id: 'Kopi Hitam', name: 'Kopi Hitam ', img: 'menu2.jpg', price: 5000, deskripsi: 'sueger poll mas bro'},
             { id: 'Kopi Kapal Api', name: 'Kopi Kapal Api ', img: 'kapalapi.webp', price: 5000, deskripsi: 'murah seger paket lengkap'},
+            { id: 'es Coklat', name: 'Es Coklat', img: 'es.webp', price: 5000, deskripsi: 'seger e es coklat'},
         ],
     }));
 
