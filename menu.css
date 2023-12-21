@@ -166,9 +166,9 @@ button:focus {
     }
 
     .content .menu-content .menu-card .card-item {
-        top: 16%;
+        top: 20%;
         text-align: center;
-        margin: 35px 15px;
+        margin: 10px ;
         border: 1px solid var(--black);
         box-shadow: 10px 10px 10px var(--black);
     }
@@ -204,8 +204,8 @@ button:focus {
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin: 30px 15px;
-        width: 85%;
+        margin: 15px;
+        width: 95%;
         border: 1px solid var(--black);
         box-sizing: border-box;
         overflow: hidden;
@@ -216,7 +216,7 @@ button:focus {
         width: 100%;
         box-sizing: border-box;
         margin: 0;
-        padding: 20px;
+        padding: 0px;
     }
 
     .content .menu-content .menu-card .card-item .button {
