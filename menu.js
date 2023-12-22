@@ -14,21 +14,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Content yang memuat semua detail menu
 
-    const multiWrapper = document.querySelector(".multi-wrapper");
+    const multiWrapper1 = document.querySelector(".multi-wrapper1");
+    const multiWrapper2 = document.querySelector(".multi-wrapper2");
 
     // Detail semua menu
 
+    // Makanan
+    const burger = document.getElementById('burger');
+    const sosis = document.getElementById('sosis');
+    const kue = document.getElementById('kue');
+
+
+    // Minuman
     const KopiHitam = document.getElementById('kopi-hitam');
     const KopiMaca = document.getElementById('kopi-maca');
     const kopiKapalApi = document.getElementById('kopi-api');
 
     // Button Back
     const drinkBtnBack = document.querySelectorAll(".drink-btn");
+    const foodBtnBack = document.querySelectorAll(".food-btn");
 
     // BUtton semua detail menu
+
+    // makanan
+    const btnDetailBurger = document.getElementById('btn-burger');
+    const btnDetailSosis =document.getElementById('btn-sosis');
+    const btnDetailKue = document.getElementById('btn-kue');
+
+    // minuman
     const btnDetailMacchiato = document.getElementById("macchiato");
     const btnDetailKopiHitam = document.getElementById("hitam");
     const btnDetailKopiKapalApi = document.getElementById("kapalApi");
+
 
 
 
@@ -53,12 +70,25 @@ document.addEventListener("DOMContentLoaded", function() {
         showOrderContent();
     });
 
-    // detail menu kopi macchiato
+    // detail makanan
+
+    btnDetailBurger.addEventListener("click", function(){
+        detailBurger();
+    });
+
+    btnDetailSosis.addEventListener("click", function(){
+        detailSosis();
+    });
+
+    btnDetailKue.addEventListener("click", function(){
+        detailKue();
+    })
+
+    // Detail Minuman
+
     btnDetailMacchiato.addEventListener("click", function(){
         detailMacchiato();
     });
-
-    // Detail menu kopi hitam
 
     btnDetailKopiHitam.addEventListener("click", function(){
         detailKopiHitam();
@@ -77,6 +107,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    foodBtnBack.forEach(function(button) {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            foodBack();
+        });
+    });
+
     // Lihat Konten makanan
 
     function showFoodContent() {
@@ -84,7 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
         foodContent.style.display = "block";
         drinkContent.style.display = "none";
         orderContent.style.display = "none";
-        multiWrapper.style.display = "none";
+        multiWrapper1.style.display = "none";
+        multiWrapper2.style.display = "none";
     }
 
     // Lihat konten minuman
@@ -94,33 +132,80 @@ document.addEventListener("DOMContentLoaded", function() {
         foodContent.style.display = "none";
         drinkContent.style.display = "block";
         orderContent.style.display = "none";
-        multiWrapper.style.display = "none";
+        multiWrapper1.style.display = "none";
+        multiWrapper2.style.display = "none";
     }
 
     // lihat konten order
-
+    
     function showOrderContent() {
         content.style.transform = "translateY(0)";
         foodContent.style.display = "none";
         drinkContent.style.display = "none";
         orderContent.style.display = "block";
-        multiWrapper.style.display = "none";
+        multiWrapper1.style.display = "none";
+        multiWrapper2.style.display = "none";
     }
 
-    // Menu macchiato
+    // Food content
+
+    function detailBurger() {
+        content.style.transform = 'translateY(0)';
+        foodContent.style.display = "none";
+        drinkContent.style.display = "none";
+        orderContent.style.display = "none";
+        multiWrapper1.style.display = "block";
+        multiWrapper2.style.display = "none";
+        KopiMaca.style.display = "none";
+        KopiHitam.style.display = "none";
+        kopiKapalApi.style.display = "none";
+        burger.style.display = "block";
+    }
+
+    function detailSosis() {
+        content.style.transform = 'translateY(0)';
+        foodContent.style.display = "none";
+        drinkContent.style.display = "none";
+        orderContent.style.display = "none";
+        multiWrapper1.style.display = "block";
+        multiWrapper2.style.display = "none";
+        KopiMaca.style.display = "none";
+        KopiHitam.style.display = "none";
+        kopiKapalApi.style.display = "none";
+        burger.style.display = "none";
+        sosis.style.display = "block";
+        kue.style.display = "none";
+    }
+
+    function detailKue() {
+        content.style.transform = 'translateY(0)';
+        foodContent.style.display = "none";
+        drinkContent.style.display = "none";
+        orderContent.style.display = "none";
+        multiWrapper1.style.display = "block";
+        multiWrapper2.style.display = "none";
+        KopiMaca.style.display = "none";
+        KopiHitam.style.display = "none";
+        kopiKapalApi.style.display = "none";
+        burger.style.display = "none";
+        sosis.style.display = "none";
+        kue.style.display = "block";
+    }
+
+    // Drink COntent
 
     function detailMacchiato() {
         content.style.transform = 'translateY(0)';
         foodContent.style.display = "none";
         drinkContent.style.display = "none";
         orderContent.style.display = "none";
-        multiWrapper.style.display = "block";
+        multiWrapper1.style.display = "none";
+        multiWrapper2.style.display = "block";
         KopiMaca.style.display = "block";
         KopiHitam.style.display = "none";
         kopiKapalApi.style.display = "none";
+        burger.style.display = "none";
     }
-
-    // Menu kopi hitam
 
     function detailKopiHitam() {
         content.style.transform = 'translateY(0)';
@@ -128,9 +213,11 @@ document.addEventListener("DOMContentLoaded", function() {
         drinkContent.style.display = "none";
         orderContent.style.display = "none";
         KopiMaca.style.display = "none";
-        multiWrapper.style.display = "block";
+        multiWrapper1.style.display = "none";
+        multiWrapper2.style.display = "block";
         KopiHitam.style.display = "block";
         kopiKapalApi.style.display = "none";
+        burger.style.display = "none";
     }
 
     function detailKopiKapalApi() {
@@ -138,10 +225,12 @@ document.addEventListener("DOMContentLoaded", function() {
         foodContent.style.display = "none";
         drinkContent.style.display = "none";
         orderContent.style.display = "none";
-        multiWrapper.style.display = "block";
+        multiWrapper1.style.display = "none";
+        multiWrapper2.style.display = "block";
         KopiMaca.style.display = "none";
         KopiHitam.style.display = "none";
         kopiKapalApi.style.display = "block";
+        burger.style.display = "none";
     }
 
     // Button back
@@ -149,7 +238,15 @@ document.addEventListener("DOMContentLoaded", function() {
     function buttonBack() {
         content.style.transform = 'translateY(0)';
         drinkContent.style.display = "block";
-        multiWrapper.style.display = "none";
+        multiWrapper1.style.display = "none";
+        multiWrapper2.style.display = "none";
+    }
+
+    function foodBack(){
+        content.style.transform = 'translateY(0)';
+        foodContent.style.display = "block";
+        multiWrapper1.style.display = "none";
+        multiWrapper2.style.display = "none";
     }
 
 });
@@ -256,4 +353,6 @@ function slideImage(){
 }
 
 window.addEventListener('resize', slideImage);
+
+
 

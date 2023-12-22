@@ -33,16 +33,15 @@
 
         <!-- Content Food start -->
 
-        <div id="foodContent" class="menu-content foodContent animate__animated animate__fadeInUp" x-data="foodContent">
+        <div id="foodContent" class="menu-content foodContent animate__animated animate__fadeInUp">
             <div class="menu-card" >
-                <template x-for="(item, index) in items" x-key="index">
                 <div class="card-item" data-aos="fade-down" data-aos-duration="1000">
-                    <img :src="`img/${item.img}`" :alt="item.name">
+                    <img src="img/buger.jpg" alt="burger">
                     <footer>
-                        <h1 x-text="item.name"></h1>
-                        <p x-text="item.deskripsi"></p>
-                        <h4 x-text="rupiah(item.price)"></h4>
-                        <button class="button detail-button" onclick="showDetailMenu()">
+                        <h1>Burger</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ab?</p>
+                        <h4>Rp 10.000</h4>
+                        <button class="button detail-button" @click="burger()" id="btn-burger">
                             <svg
                                 width="24"
                                 height="24"
@@ -55,6 +54,8 @@
                             <use href="feather-sprite.svg#eye" />
                             </svg>
                         </button>
+                        <span x-data="burger" style="border-bottom: none;">
+                        <template x-for="(item, index) in items" x-key="index">
                         <button class="button" @click="$store.cart.add(item)">
                             <svg
                                 width="24"
@@ -68,11 +69,294 @@
                             <use href="feather-sprite.svg#shopping-cart" />
                             </svg>
                         </button>
+                        </template>
+                        </span>
                     </footer>
                 </div>
-                </template>
+                <div class="card-item" data-aos="fade-down" data-aos-duration="1000">
+                    <img src="img/sosis.jpg" alt="sosis">
+                    <footer>
+                        <h1>Sosis</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ab?</p>
+                        <h4>Rp 8000</h4>
+                        <button class="button detail-button" @click="sosis()" id="btn-sosis">
+                            <svg
+                                width="24"
+                                height="24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                            <use href="feather-sprite.svg#eye" />
+                            </svg>
+                        </button>
+                        <span x-data="sosis" style="border-bottom: none;">
+                        <template x-for="(item, index) in items" x-key="index">
+                        <button class="button" @click="$store.cart.add(item)">
+                            <svg
+                                width="24"
+                                height="24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                            <use href="feather-sprite.svg#shopping-cart" />
+                            </svg>
+                        </button>
+                        </template>
+                        </span>
+                    </footer>
+                </div>
+                <div class="card-item" data-aos="fade-down" data-aos-duration="1000">
+                    <img src="img/cake.jpg" alt="kue">
+                    <footer>
+                        <h1>Kue</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ab?</p>
+                        <h4>Rp 16.000</h4>
+                        <button class="button detail-button" @click="kue()" id="btn-kue">
+                            <svg
+                                width="24"
+                                height="24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                            <use href="feather-sprite.svg#eye" />
+                            </svg>
+                        </button>
+                        <span x-data="kue" style="border-bottom: none;">
+                        <template x-for="(item, index) in items" x-key="index">
+                        <button class="button" @click="$store.cart.add(item)">
+                            <svg
+                                width="24"
+                                height="24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                            <use href="feather-sprite.svg#shopping-cart" />
+                            </svg>
+                        </button>
+                        </template>
+                        </span>
+                    </footer>
+                </div>
             </div>
         </div>
+
+        <!-- Detail food menu start -->
+
+        <div class="multi-wrapper1">
+
+            <div class = "card-wrapper" id="burger">
+                <div class = "card" >
+                    <!-- card left -->
+                    <div class = "product-imgs">
+                        <div class = "img-display">
+                            <div class = "img-showcase" >
+                                <img src = "img/buger.jpg" alt = "shoe image">
+                                <img src = "img/buger.jpg" alt = "shoe image">
+                                <img src = "img/buger.jpg" alt = "shoe image">
+                                <img src = "img/buger.jpg" alt = "shoe image">
+                            </div>
+                        </div>
+                        <div class = "img-select" data-img-id="1">
+                            <div class = "img-item">
+                                <a href = "#" data-id = "1">
+                                    <img src = "img/buger.jpg" alt = "shoe image">
+                                </a>
+                            </div>
+                            <div class = "img-item">
+                                <a href = "#" data-id = "2">
+                                    <img src = "img/buger.jpg" alt = "shoe image">
+                                </a>
+                            </div>
+                            <div class = "img-item">
+                                <a href = "#" data-id = "3">
+                                    <img src = "img/buger.jpg" alt = "shoe image">
+                                </a>
+                              </div>
+                            <div class = "img-item">
+                                <a href = "#" data-id = "4">
+                                    <img src = "img/buger.jpg" alt = "shoe image">
+                                </a>
+                              </div>
+                        </div>
+                    </div>
+        
+                    <!-- card right -->
+        
+                    <div class = "product-content" >
+                        <h2 class = "product-title">Burger</h2>
+                        <div class = "product-detail">
+                            <h2>Detail Menu :</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est vitae eius dolorum debitis harum nesciunt officia animi, perspiciatis iste quisquam provident dicta dolore maxime ut, rem laudantium modi enim quia impedit? Dicta consectetur maiores reprehenderit non accusantium vel, provident asperiores perspiciatis repellat ut adipisci ex voluptatem iste sit distinctio voluptatibus!</p>
+                            <br />
+                            <i data-feather="star" class="star-full"></i>
+                            <i data-feather="star" class="star-full"></i>
+                            <i data-feather="star" class="star-full"></i>
+                            <i data-feather="star" class="star-full"></i>
+                            <i data-feather="star" class="star-full"></i>
+                            <br />
+                            <del>Rp 12.000</del>
+                            <i>Rp 10.000</i>
+                        </div>
+          
+                        <div class="purchase-info" x-data="burger">
+                            <template x-for="(item, index) in items" x-key="index">
+                                <button type="button" class="btn" @click="$store.cart.add(item)">
+                                    Tambah ke Keranjang
+                                </button>
+                            </template>
+                            <button type="button" class="btn food-btn" id="btn-back" onclick="foodBack()">kembali</button>
+                        </div>                            
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class = "card-wrapper" id="sosis">
+            <div class = "card" >
+                <!-- card left -->
+                <div class = "product-imgs">
+                    <div class = "img-display">
+                        <div class = "img-showcase">
+                            <img src = "img/sosis.jpg" alt = "sosis">
+                            <img src = "img/sosis.jpg" alt = "sosis">
+                            <img src = "img/sosis.jpg" alt = "sosis">
+                            <img src = "img/sosis.jpg" alt = "sosis">
+                        </div>
+                    </div>
+                    <div class = "img-select">
+                        <div class = "img-item">
+                            <a href = "#" data-id = "1">
+                                <img src = "img/sosis.jpg" alt = "sosis">
+                            </a>
+                        </div>
+                        <div class = "img-item">
+                            <a href = "#" data-id = "2">
+                                <img src = "img/sosis.jpg" alt = "sosis">
+                            </a>
+                        </div>
+                        <div class = "img-item">
+                            <a href = "#" data-id = "3">
+                                <img src = "img/sosis.jpg" alt = "sosis">
+                            </a>
+                          </div>
+                        <div class = "img-item">
+                            <a href = "#" data-id = "4">
+                                <img src = "img/sosis.jpg" alt = "sosis">
+                            </a>
+                          </div>
+                    </div>
+                </div>
+    
+                <!-- card right -->
+    
+                <div class = "product-content">
+                    <h2 class = "product-title">Sosis</h2>
+                    <div class = "product-detail">
+                        <h2>about this item: </h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
+                        <br />
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <br />
+                        <del>Rp 9000</del>
+                        <i>Rp 8000</i>
+                    </div>
+      
+                    <div class="purchase-info" x-data="sosis">
+                        <template x-for="(item, index) in items" x-key="index">
+                            <button type="button" class="btn" @click="$store.cart.add(item)">
+                                Tambah ke Keranjang
+                            </button>
+                        </template>
+                        <button type="button" class="btn food-btn" id="btn-back" onclick="foodBack()">kembali</button>
+                    </div>                            
+                </div>
+            </div>
+            </div>
+    
+            <div class = "card-wrapper" id="kue">
+            <div class = "card" >
+                <!-- card left -->
+                <div class = "product-imgs">
+                    <div class = "img-display">
+                        <div class = "img-showcase">
+                            <img src = "img/cake.jpg" alt = "shoe image">
+                            <img src = "img/cake.jpg" alt = "shoe image">
+                            <img src = "img/cake.jpg" alt = "shoe image">
+                            <img src = "img/cake.jpg" alt = "shoe image">
+                        </div>
+                    </div>
+                    <div class = "img-select">
+                        <div class = "img-item">
+                            <a href = "#" data-id = "1">
+                                <img src = "img/cake.jpg" alt = "shoe image">
+                            </a>
+                        </div>
+                        <div class = "img-item">
+                            <a href = "#" data-id = "2">
+                                <img src = "img/cake.jpg" alt = "shoe image">
+                            </a>
+                        </div>
+                        <div class = "img-item">
+                            <a href = "#" data-id = "3">
+                                <img src = "img/cake.jpg" alt = "shoe image">
+                            </a>
+                          </div>
+                        <div class = "img-item">
+                            <a href = "#" data-id = "4">
+                                <img src = "img/cake.jpg" alt = "shoe image">
+                            </a>
+                          </div>
+                    </div>
+                </div>
+    
+                <!-- card right -->
+    
+                <div class = "product-content" >
+                    <h2 class = "product-title">Kue</h2>
+                    <div class = "product-detail">
+                        <h2>about this item: </h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
+                        <br />
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <br />
+                        <del>Rp 20.000</del>
+                        <i>Rp 16.000</i>
+                    </div>
+      
+                    <div class="purchase-info" x-data="kue">
+                        <template x-for="(item, index) in items" x-key="index">
+                            <button type="button" class="btn" @click="$store.cart.add(item)">
+                                Tambah ke Keranjang
+                            </button>
+                        </template>
+                        <button type="button" class="btn food-btn" id="btn-back" onclick="foodBack()">kembali</button>
+                    </div>                            
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Detail food Finish -->
 
         <!-- Content Drink Start -->
 
@@ -156,7 +440,7 @@
                             </svg>
                         </button>
                         </template>
-                    </span>
+                        </span>
                     </footer>
                 </div>
                 <div class="card-item" data-aos="fade-down" data-aos-duration="1000" >
@@ -203,21 +487,23 @@
         </div>
 
         <!-- Content drink Finsih -->
-    <div class="multi-wrapper">
+
+        <!-- Detail menu -->
+    <div class="multi-wrapper2">
 
         <div class = "card-wrapper" id="kopi-maca">
             <div class = "card" >
                 <!-- card left -->
                 <div class = "product-imgs">
                     <div class = "img-display">
-                        <div class = "img-showcase">
+                        <div class = "img-showcase" >
                             <img src = "img/menu1.jpg" alt = "shoe image">
                             <img src = "img/menu1.jpg" alt = "shoe image">
                             <img src = "img/menu1.jpg" alt = "shoe image">
                             <img src = "img/menu1.jpg" alt = "shoe image">
                         </div>
                     </div>
-                    <div class = "img-select">
+                    <div class = "img-select" data-img-id="1">
                         <div class = "img-item">
                             <a href = "#" data-id = "1">
                                 <img src = "img/menu1.jpg" alt = "shoe image">
@@ -248,9 +534,18 @@
                     <div class = "product-detail">
                         <h2>about this item: </h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
+                        <br />
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <i data-feather="star" class="star-full"></i>
+                        <br />
+                        <del>Rp 5000</del>
+                        <i>Rp 5000</i>
                     </div>
       
-                    <div class="purchase-info" x-data="detailItemsKopiMacchiato">
+                    <div class="purchase-info" x-data="kopiMacchiato">
                         <template x-for="(item, index) in items" x-key="index">
                             <button type="button" class="btn" @click="$store.cart.add(item)">
                                 Tambah ke Keranjang
@@ -306,9 +601,18 @@
                 <div class = "product-detail">
                     <h2>about this item: </h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
+                    <br />
+                    <i data-feather="star" class="star-full"></i>
+                    <i data-feather="star" class="star-full"></i>
+                    <i data-feather="star" class="star-full"></i>
+                    <i data-feather="star" class="star-full"></i>
+                    <i data-feather="star" class="star-full"></i>
+                    <br />
+                    <del>Rp 6000</del>
+                    <i>Rp 5000</i>
                 </div>
   
-                <div class="purchase-info" x-data="detailItemsKopiHitam">
+                <div class="purchase-info" x-data="kopiHitam">
                     <template x-for="(item, index) in items" x-key="index">
                         <button type="button" class="btn" @click="$store.cart.add(item)">
                             Tambah ke Keranjang
@@ -363,9 +667,18 @@
                 <div class = "product-detail">
                     <h2>about this item: </h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
+                    <br />
+                    <i data-feather="star" class="star-full"></i>
+                    <i data-feather="star" class="star-full"></i>
+                    <i data-feather="star" class="star-full"></i>
+                    <i data-feather="star" class="star-full"></i>
+                    <i data-feather="star" class="star-full"></i>
+                    <br />
+                    <del>Rp 5000</del>
+                    <i>Rp 5000</i>
                 </div>
   
-                <div class="purchase-info" x-data="detailItemsKopiApi">
+                <div class="purchase-info" x-data="kapalApi">
                     <template x-for="(item, index) in items" x-key="index">
                         <button type="button" class="btn" @click="$store.cart.add(item)">
                             Tambah ke Keranjang

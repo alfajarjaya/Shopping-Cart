@@ -1,54 +1,48 @@
 document.addEventListener('alpine:init', () => {
-    Alpine.data('foodContent', () => ({
+
+    // Food content
+    
+    Alpine.data('burger', () => ({
 
         items: [
-            { id: 'Burger', name: 'Burger ', img: 'buger.jpg', price: 10000, deskripsi: 'wenakkk'},
-            { id: 'kue', name: 'Kue ', img: 'cake.jpg', price: 15000, deskripsi: 'jossss'},
-            { id: 'sosis', name: 'Sosis ', img: 'sosis.jpg', price: 10000, deskripsi: 'mahokkk'},
+            { id: 'Burger', name: 'Burger ', img: 'buger.jpg', price: 10000},
             // { id: 'iga bakar', name: 'Iga Bakar', img: 'iga.jpg', price: 50000, deskripsi: 'wenak maknyos'},
         ],
     }));
 
+    Alpine.data('sosis', () => ({
+        items: [
+            { id: 'sosis', name: 'Sosis ', img: 'sosis.jpg', price: 10000},
+        ],
+    }));
+
+    Alpine.data('kue', () => ({
+        items: [
+            { id: 'kue', name: 'Kue ', img: 'cake.jpg', price: 15000},
+        ],
+    }));
+
+    // Drink COntent
+
     Alpine.data('kopiMacchiato', () => ({
         items: [
-            // { id: 'Kopi Kapal Api', name: 'Kopi Kapal Api ', img: 'kapalapi.webp', price: 5000, deskripsi: 'murah banget poll mas broooooo wenak pisan'},
-            // { id: 'Kopi Hitam', name: 'Kopi Hitam ', img: 'menu2.jpg', price: 5000, deskripsi: 'sueger poll mas bro'},
-            { id: 'Kopi Macchiato', name: 'Kopi Macchiato ', img: 'menu1.jpg', price: 5000, deskripsi: 'sueger'},
+            { id: 'Kopi Macchiato', name: 'Kopi Macchiato ', img: 'menu1.jpg', price: 5000},
             // { id: 'es Coklat', name: 'Es Coklat', img: 'es.webp', price: 5000, deskripsi: 'seger e es coklat'},
         ],
     }));
 
     Alpine.data('kopiHitam', () => ({
         items: [
-            { id: 'Kopi Hitam', name: 'Kopi Hitam ', img: 'menu2.jpg', price: 5000, deskripsi: 'sueger poll mas bro'},
+            { id: 'Kopi Hitam', name: 'Kopi Hitam ', img: 'menu2.jpg', price: 5000},
         ],
     }));
 
     Alpine.data('kapalApi', () => ({
         items: [
-            { id: 'Kopi Kapal Api', name: 'Kopi Kapal Api ', img: 'kapalapi.webp', price: 5000, deskripsi: 'murah banget poll mas broooooo wenak pisan'},
+            { id: 'Kopi Kapal Api', name: 'Kopi Kapal Api ', img: 'kapalapi.webp', price: 5000},
         ],
     }));
 
-    Alpine.data('detailItemsKopiMacchiato', () => ({
-        items: [
-            { id: 'Kopi Macchiato', name: 'Kopi Macchiato ', img: 'menu1.jpg', price: 5000, deskripsi: 'suegepolhayyukkkkkr'},
-        ],
-
-    }));
-
-    Alpine.data('detailItemsKopiHitam', () => ({
-        items: [
-            { id: 'Kopi Hitam', name: 'Kopi Hitam ', img: 'menu2.jpg', price: 5000, deskripsi: 'sueger poll mas bro'},
-        ],
-    }));
-
-    Alpine.data('detailItemsKopiApi', () => ({
-        items: [
-            { id: 'Kopi Kapal Api', name: 'Kopi Kapal Api ', img: 'kapalapi.webp', price: 5000, deskripsi: 'murah banget poll mas broooooo wenak pisan'},
-        ],
-    }));
-    
     Alpine.store('cart', {
 
         // Awal permulaan sebelum ada pesanan di keranjang
