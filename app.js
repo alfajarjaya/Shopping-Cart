@@ -24,6 +24,12 @@ document.addEventListener('alpine:init', () => {
         ],
     }));
 
+    Alpine.data('kapalApi', () => ({
+        items: [
+            { id: 'Kopi Kapal Api', name: 'Kopi Kapal Api ', img: 'kapalapi.webp', price: 5000, deskripsi: 'murah banget poll mas broooooo wenak pisan'},
+        ],
+    }));
+
     Alpine.data('detailItemsKopiMacchiato', () => ({
         items: [
             { id: 'Kopi Macchiato', name: 'Kopi Macchiato ', img: 'menu1.jpg', price: 5000, deskripsi: 'suegepolhayyukkkkkr'},
@@ -34,6 +40,12 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('detailItemsKopiHitam', () => ({
         items: [
             { id: 'Kopi Hitam', name: 'Kopi Hitam ', img: 'menu2.jpg', price: 5000, deskripsi: 'sueger poll mas bro'},
+        ],
+    }));
+
+    Alpine.data('detailItemsKopiApi', () => ({
+        items: [
+            { id: 'Kopi Kapal Api', name: 'Kopi Kapal Api ', img: 'kapalapi.webp', price: 5000, deskripsi: 'murah banget poll mas broooooo wenak pisan'},
         ],
     }));
     

@@ -1,6 +1,9 @@
 // MEnu yang di tekan
 
 document.addEventListener("DOMContentLoaded", function() {
+
+    // Menu yang di tekan
+
     const foodButton = document.getElementById("foodButton");
     const drinkButton = document.getElementById("drinkButton");
     const orderButton = document.getElementById("orderButton")
@@ -9,97 +12,144 @@ document.addEventListener("DOMContentLoaded", function() {
     const orderContent = document.getElementById("orderContent")
     const content = document.getElementById("content");
 
+    // Content yang memuat semua detail menu
+
+    const multiWrapper = document.querySelector(".multi-wrapper");
+
+    // Detail semua menu
+
     const KopiHitam = document.getElementById('kopi-hitam');
     const KopiMaca = document.getElementById('kopi-maca');
-    // const btnDetailMenu = document.querySelectorAll(".detail-button");
-    const btnBack = document.querySelectorAll(".btn-back");
+    const kopiKapalApi = document.getElementById('kopi-api');
+
+    // Button Back
+    const drinkBtnBack = document.querySelectorAll(".drink-btn");
+
+    // BUtton semua detail menu
     const btnDetailMacchiato = document.getElementById("macchiato");
     const btnDetailKopiHitam = document.getElementById("hitam");
+    const btnDetailKopiKapalApi = document.getElementById("kapalApi");
+
 
 
     // mEnampilkan konten secara default
 
     showDrinkContent();
 
+    // Menu makanan jika di klik
+
     foodButton.addEventListener("click", function() {
         showFoodContent();
     });
 
+    // Menu minuman jika di klik
     drinkButton.addEventListener("click", function() {
         showDrinkContent();
     });
+
+    // menu order jika di klik
 
     orderButton.addEventListener("click", function(){
         showOrderContent();
     });
 
+    // detail menu kopi macchiato
     btnDetailMacchiato.addEventListener("click", function(){
         detailMacchiato();
     });
+
+    // Detail menu kopi hitam
 
     btnDetailKopiHitam.addEventListener("click", function(){
         detailKopiHitam();
     });
 
-    btnBack.forEach(function(button) {
+    btnDetailKopiKapalApi.addEventListener("click", function(){
+        detailKopiKapalApi();
+    });
+
+    // button back
+
+    drinkBtnBack.forEach(function(button) {
         button.addEventListener("click", function(event) {
             event.preventDefault();
             buttonBack();
         });
     });
 
-    // btnBack.forEach(function(button) {
-    //     button.addEventListener("click", function(event) {
-    //         event.preventDefault();
-    //         buttonBack();
-    //     });
-    // });
+    // Lihat Konten makanan
 
     function showFoodContent() {
         content.style.transform = "translateY(0)";
         foodContent.style.display = "block";
         drinkContent.style.display = "none";
         orderContent.style.display = "none";
+        multiWrapper.style.display = "none";
     }
+
+    // Lihat konten minuman
     
     function showDrinkContent() {
         content.style.transform = "translateY(0)";
         foodContent.style.display = "none";
         drinkContent.style.display = "block";
         orderContent.style.display = "none";
+        multiWrapper.style.display = "none";
     }
+
+    // lihat konten order
 
     function showOrderContent() {
         content.style.transform = "translateY(0)";
         foodContent.style.display = "none";
         drinkContent.style.display = "none";
-        KopiHitam.style.display = "none";
         orderContent.style.display = "block";
+        multiWrapper.style.display = "none";
     }
+
+    // Menu macchiato
 
     function detailMacchiato() {
         content.style.transform = 'translateY(0)';
         foodContent.style.display = "none";
         drinkContent.style.display = "none";
         orderContent.style.display = "none";
+        multiWrapper.style.display = "block";
         KopiMaca.style.display = "block";
-        // KopiHitam.style.display = "block";
+        KopiHitam.style.display = "none";
+        kopiKapalApi.style.display = "none";
     }
+
+    // Menu kopi hitam
 
     function detailKopiHitam() {
         content.style.transform = 'translateY(0)';
         foodContent.style.display = "none";
         drinkContent.style.display = "none";
         orderContent.style.display = "none";
-        // KopiMaca.style.display = "block";
+        KopiMaca.style.display = "none";
+        multiWrapper.style.display = "block";
         KopiHitam.style.display = "block";
+        kopiKapalApi.style.display = "none";
     }
+
+    function detailKopiKapalApi() {
+        content.style.transform = 'translateY(0)';
+        foodContent.style.display = "none";
+        drinkContent.style.display = "none";
+        orderContent.style.display = "none";
+        multiWrapper.style.display = "block";
+        KopiMaca.style.display = "none";
+        KopiHitam.style.display = "none";
+        kopiKapalApi.style.display = "block";
+    }
+
+    // Button back
 
     function buttonBack() {
         content.style.transform = 'translateY(0)';
         drinkContent.style.display = "block";
-        KopiHitam.style.display = "none";
-        KopiMaca.style.display = "none";
+        multiWrapper.style.display = "none";
     }
 
 });
