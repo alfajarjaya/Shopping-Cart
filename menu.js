@@ -9,6 +9,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const orderContent = document.getElementById("orderContent")
     const content = document.getElementById("content");
 
+    const KopiHitam = document.getElementById('kopi-hitam');
+    const KopiMaca = document.getElementById('kopi-maca');
+    // const btnDetailMenu = document.querySelectorAll(".detail-button");
+    const btnBack = document.querySelectorAll(".btn-back");
+    const btnDetailMacchiato = document.getElementById("macchiato");
+    const btnDetailKopiHitam = document.getElementById("hitam");
+
+
     // mEnampilkan konten secara default
 
     showDrinkContent();
@@ -24,6 +32,28 @@ document.addEventListener("DOMContentLoaded", function() {
     orderButton.addEventListener("click", function(){
         showOrderContent();
     });
+
+    btnDetailMacchiato.addEventListener("click", function(){
+        detailMacchiato();
+    });
+
+    btnDetailKopiHitam.addEventListener("click", function(){
+        detailKopiHitam();
+    });
+
+    btnBack.forEach(function(button) {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            buttonBack();
+        });
+    });
+
+    // btnBack.forEach(function(button) {
+    //     button.addEventListener("click", function(event) {
+    //         event.preventDefault();
+    //         buttonBack();
+    //     });
+    // });
 
     function showFoodContent() {
         content.style.transform = "translateY(0)";
@@ -43,7 +73,33 @@ document.addEventListener("DOMContentLoaded", function() {
         content.style.transform = "translateY(0)";
         foodContent.style.display = "none";
         drinkContent.style.display = "none";
+        KopiHitam.style.display = "none";
         orderContent.style.display = "block";
+    }
+
+    function detailMacchiato() {
+        content.style.transform = 'translateY(0)';
+        foodContent.style.display = "none";
+        drinkContent.style.display = "none";
+        orderContent.style.display = "none";
+        KopiMaca.style.display = "block";
+        // KopiHitam.style.display = "block";
+    }
+
+    function detailKopiHitam() {
+        content.style.transform = 'translateY(0)';
+        foodContent.style.display = "none";
+        drinkContent.style.display = "none";
+        orderContent.style.display = "none";
+        // KopiMaca.style.display = "block";
+        KopiHitam.style.display = "block";
+    }
+
+    function buttonBack() {
+        content.style.transform = 'translateY(0)';
+        drinkContent.style.display = "block";
+        KopiHitam.style.display = "none";
+        KopiMaca.style.display = "none";
     }
 
 });
@@ -130,3 +186,24 @@ myForm.addEventListener("submit", function(event) {
     // reset semua konten setelah tekan tombol kirim
     Alpine.store('cart').clearCart();
 });
+
+const imgs = document.querySelectorAll('.img-item a');
+const imgBtns = [...imgs];
+let imgId = 1;
+
+imgBtns.forEach((imgItem) => {
+    imgItem.addEventListener('click', (event) => {
+        event.preventDefault();
+        imgId = imgItem.dataset.id;
+        slideImage();
+    });
+});
+
+function slideImage(){
+    const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+
+    document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+}
+
+window.addEventListener('resize', slideImage);
+
