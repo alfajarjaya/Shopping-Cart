@@ -1,0 +1,33 @@
+        
+        |================|
+        |    Overview    |
+        |================|
+
+This is a full-stack web application for a shopping cart, designed to provide users with a seamless and enjoyable online shopping experience.
+The application allows users to browse through a variety of products, add them to the cart, and proceed to checkout.
+
+
+        |================|  
+        |    Features    |
+        |================|
+
+1. Product Catalog: Explore a diverse range of products with detailed descriptions and images.
+
+2. Shopping Cart: Add and remove items from the cart with real-time updates.
+
+3. Checkout Process: Efficient checkout process with address filling and will be sent directly via WhatsApp.
+
+4. Responsive Design: A mobile-friendly interface ensures a consistent experience across devices.
+
+        |=========================|  
+        |    Technologies Used    |
+        |=========================|  
+
+
+==> Frontend :  1. HTML
+                2. CSS
+                3. JavaScript.
+
+==> FrameWork : 1. feather-icon
+                2. alpine.js
+                3. AOS
