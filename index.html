@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" type="text/css" href="menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- Link Animasi saat di scroll -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <!-- Feather Icon -->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Alphine JS -->
@@ -16,11 +17,11 @@
 </head>
 <body>
     <nav class="navbar" x-data>
-        <div class="nav-back">
-            <a href="/CafeKita/">
-                <i data-feather="chevrons-left"></i>
+        <!-- <div class="nav-back">
+            <a href="#">
+                <i data-feather="#"></i>
             </a>
-        </div>
+        </div> -->
         <button id="drinkButton" onclick="showDrinkContent()">Minuman</button>
         <button id="foodButton" onclick="showFoodContent()">Makanan</button>
         <button id="orderButton" onclick="showOrderContent()">
@@ -39,7 +40,6 @@
                     <img src="img/buger.jpg" alt="burger">
                     <footer>
                         <h1>Burger</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ab?</p>
                         <h4>Rp 10.000</h4>
                         <button class="button detail-button" @click="burger()" id="btn-burger">
                             <svg
@@ -51,7 +51,7 @@
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                             >
-                            <use href="feather-sprite.svg#eye" />
+                            <use href="feather-sprite.svg#book-open" />
                             </svg>
                         </button>
                         <span x-data="burger" style="border-bottom: none;">
@@ -77,7 +77,6 @@
                     <img src="img/sosis.jpg" alt="sosis">
                     <footer>
                         <h1>Sosis</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ab?</p>
                         <h4>Rp 8000</h4>
                         <button class="button detail-button" @click="sosis()" id="btn-sosis">
                             <svg
@@ -89,7 +88,7 @@
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                             >
-                            <use href="feather-sprite.svg#eye" />
+                            <use href="feather-sprite.svg#book-open" />
                             </svg>
                         </button>
                         <span x-data="sosis" style="border-bottom: none;">
@@ -115,7 +114,6 @@
                     <img src="img/cake.jpg" alt="kue">
                     <footer>
                         <h1>Kue</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ab?</p>
                         <h4>Rp 16.000</h4>
                         <button class="button detail-button" @click="kue()" id="btn-kue">
                             <svg
@@ -127,7 +125,7 @@
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                             >
-                            <use href="feather-sprite.svg#eye" />
+                            <use href="feather-sprite.svg#book-open" />
                             </svg>
                         </button>
                         <span x-data="kue" style="border-bottom: none;">
@@ -366,7 +364,6 @@
                     <img src="img/menu1.jpg" alt="menu1">
                     <footer>
                         <h1>Kopi Macchiato</h1>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, minus!</p>
                         <h4>Rp. 5000</h4>
                         <button class="button" @click="kopiMacchiato()" id="macchiato">
                             <a href="#">
@@ -379,7 +376,7 @@
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                 >
-                                <use href="feather-sprite.svg#eye" />
+                                <use href="feather-sprite.svg#book-open" />
                                 </svg>
                             </a>
                         </button>
@@ -407,7 +404,6 @@
                     <img src="img/menu2.jpg" alt="menu2">
                     <footer>
                         <h1>Kopi Hitam</h1>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, minus!</p>
                         <h4>Rp. 5000</h4>
                         <button class="button detail-button" @click="kopiHitam()" id="hitam">
                             <a href="#">
@@ -420,7 +416,7 @@
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                 >
-                                <use href="feather-sprite.svg#eye" />
+                                <use href="feather-sprite.svg#book-open" />
                                 </svg>
                             </a>
                         </button>
@@ -447,7 +443,6 @@
                     <img src="img/kapalapi.webp" alt="menu2">
                     <footer>
                         <h1>Kopi Kapal Api</h1>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, minus!</p>
                         <h4>Rp. 5000</h4>
                         <button class="button detail-button" @click="kapalApi()" id="kapalApi">
                             <a href="#">
@@ -460,7 +455,7 @@
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                 >
-                                <use href="feather-sprite.svg#eye" />
+                                <use href="feather-sprite.svg#book-open" />
                                 </svg>
                             </a>
                         </button>
@@ -783,7 +778,6 @@
 
     <!-- Script Animasi -->
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <script>
         AOS.init();

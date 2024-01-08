@@ -156,10 +156,9 @@ document.addEventListener("DOMContentLoaded", function() {
         orderContent.style.display = "none";
         multiWrapper1.style.display = "block";
         multiWrapper2.style.display = "none";
-        KopiMaca.style.display = "none";
-        KopiHitam.style.display = "none";
-        kopiKapalApi.style.display = "none";
         burger.style.display = "block";
+        sosis.style.display = "none";
+        kue.style.display = "none";
     }
 
     function detailSosis() {
@@ -169,9 +168,6 @@ document.addEventListener("DOMContentLoaded", function() {
         orderContent.style.display = "none";
         multiWrapper1.style.display = "block";
         multiWrapper2.style.display = "none";
-        KopiMaca.style.display = "none";
-        KopiHitam.style.display = "none";
-        kopiKapalApi.style.display = "none";
         burger.style.display = "none";
         sosis.style.display = "block";
         kue.style.display = "none";
@@ -184,9 +180,6 @@ document.addEventListener("DOMContentLoaded", function() {
         orderContent.style.display = "none";
         multiWrapper1.style.display = "block";
         multiWrapper2.style.display = "none";
-        KopiMaca.style.display = "none";
-        KopiHitam.style.display = "none";
-        kopiKapalApi.style.display = "none";
         burger.style.display = "none";
         sosis.style.display = "none";
         kue.style.display = "block";
@@ -204,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function() {
         KopiMaca.style.display = "block";
         KopiHitam.style.display = "none";
         kopiKapalApi.style.display = "none";
-        burger.style.display = "none";
     }
 
     function detailKopiHitam() {
@@ -212,12 +204,11 @@ document.addEventListener("DOMContentLoaded", function() {
         foodContent.style.display = "none";
         drinkContent.style.display = "none";
         orderContent.style.display = "none";
-        KopiMaca.style.display = "none";
         multiWrapper1.style.display = "none";
         multiWrapper2.style.display = "block";
+        KopiMaca.style.display = "none";
         KopiHitam.style.display = "block";
         kopiKapalApi.style.display = "none";
-        burger.style.display = "none";
     }
 
     function detailKopiKapalApi() {
@@ -230,7 +221,6 @@ document.addEventListener("DOMContentLoaded", function() {
         KopiMaca.style.display = "none";
         KopiHitam.style.display = "none";
         kopiKapalApi.style.display = "block";
-        burger.style.display = "none";
     }
 
     // Button back
@@ -346,13 +336,14 @@ imgBtns.forEach((imgItem) => {
     });
 });
 
-function slideImage(){
-    const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
-
-    document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+function slideImage() {
+    const showcases = document.querySelectorAll('.img-showcase');
+    
+    showcases.forEach((showcase) => {
+        const displayWidth = showcase.querySelector('img:first-child').clientWidth;
+        
+        showcase.style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+    });
 }
 
 window.addEventListener('resize', slideImage);
-
-
-
